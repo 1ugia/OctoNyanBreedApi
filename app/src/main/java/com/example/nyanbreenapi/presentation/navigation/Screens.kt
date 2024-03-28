@@ -1,5 +1,7 @@
 package com.example.nyanbreenapi.presentation.navigation
 
+import com.example.nyanbreenapi.network.dependanceInject.ApiModule.IMAGE_URL
+
 open class Screens (
     val route :String, //what page it's going
     val arguments: String? = null, //e.g = page selection for cat breed chosen
@@ -10,7 +12,7 @@ open class Screens (
     )
 
     object BreedsImageScreen: Screens(
-        route = "Image_screen",
+        route = "$IMAGE_URL{imageId}"
         // no need to 'hard code' arguments in as it can be added in when opening the route.
     )
 

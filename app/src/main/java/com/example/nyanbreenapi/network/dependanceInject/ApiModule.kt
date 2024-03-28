@@ -1,7 +1,7 @@
 package com.example.nyanbreenapi.network.dependanceInject
 
-import com.example.nyanbreenapi.network.model.CatBreedModel
-import com.example.nyanbreenapi.network.model.CatImageModel
+import com.example.nyanbreenapi.network.dto.CatBreedModel
+import com.example.nyanbreenapi.network.dto.CatImageModel
 import com.example.nyanbreenapi.network.dependanceInject.ApiModule.BREED_URL
 import com.example.nyanbreenapi.network.dependanceInject.ApiModule.IMAGE_URL
 import dagger.Module

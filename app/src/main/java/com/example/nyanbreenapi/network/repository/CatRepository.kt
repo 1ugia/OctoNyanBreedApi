@@ -1,8 +1,8 @@
 package com.example.nyanbreenapi.network.repository
 
 import com.example.nyanbreenapi.network.dependanceInject.RetrofitApi
-import com.example.nyanbreenapi.network.model.CatBreedModel
-import com.example.nyanbreenapi.network.model.CatImageModel
+import com.example.nyanbreenapi.network.dto.CatBreedModel
+import com.example.nyanbreenapi.network.dto.CatImageModel
 import com.example.nyanbreenapi.utility.Resource
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject

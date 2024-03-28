@@ -1,4 +1,4 @@
-package com.example.nyanbreenapi.network.model
+package com.example.nyanbreenapi.network.dto
 
 import com.google.gson.annotations.SerializedName
 
