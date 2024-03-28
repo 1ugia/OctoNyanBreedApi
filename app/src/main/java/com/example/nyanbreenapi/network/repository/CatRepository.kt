@@ -8,8 +8,11 @@ import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 
 //Injects to view Model
+
 @ActivityScoped
+
 // scoping will make this alive as long as the activity does
+
 class CatRepository @Inject constructor(
     private val retrofitApi: RetrofitApi,
 ) {
