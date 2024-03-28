@@ -1,7 +1,7 @@
 package com.example.nyanbreenapi.network.dependanceInject
 
-import com.example.nyanbreenapi.network.CatBreedModel
-import com.example.nyanbreenapi.network.CatImageModel
+import com.example.nyanbreenapi.network.model.CatBreedModel
+import com.example.nyanbreenapi.network.model.CatImageModel
 import com.example.nyanbreenapi.network.dependanceInject.ApiModule.BREED_URL
 import com.example.nyanbreenapi.network.dependanceInject.ApiModule.IMAGE_URL
 import dagger.Module
@@ -24,7 +24,7 @@ object ApiModule {
     // All requests will append this base url
     private const val BASE_URL = "https://api.thecatapi.com/v1"
     const val BREED_URL = "/breeds"
-    const val IMAGE_URL = "/images"
+    const val IMAGE_URL = "https://api.thecatapi.com/v1/images/search?limit=20&api_key=live_Q9HYVzt4Cg1SGAdqUvUUA0xwbHaoulPJ0WfKxP8gixkpuTorxXJpn8Qxiy0NZsMW&breed_ids="
 
     @Singleton
     // Provide the client that makes the call and logs the call in the logcat
@@ -52,10 +52,11 @@ object ApiModule {
 
 interface RetrofitApi {
     @GET(BREED_URL)
-    suspend fun getBreeds(): Result<List<CatBreedModel>>
+    suspend fun getBreeds(): List<CatBreedModel>
 
-    @GET("$IMAGE_URL/{imageId}")
+    @GET("$IMAGE_URL{imageId}")
     suspend fun getImage(
+        //implement the image id in Path to load the images we want
         @Path("imageId") imageId: String
-    ): Result<List<CatImageModel>>
+    ): List<CatImageModel>
 }

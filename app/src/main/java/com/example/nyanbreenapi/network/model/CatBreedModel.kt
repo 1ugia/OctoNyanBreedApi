@@ -1,4 +1,4 @@
-package com.example.nyanbreenapi.network
+package com.example.nyanbreenapi.network.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -7,6 +7,4 @@ data class CatBreedModel(
     val id: String? = null,
     @SerializedName("name")
     val name: String? = null,
-    @SerializedName("reference_image_id")
-    val reference_image_id: String? = null,
 )
