@@ -21,18 +21,32 @@ Octo Tech: Create an API request call app
 2 - create OKHttpClient in ApiModule and locate BASE_URLs
   Implement Singleton component and Module
 
-3 - create ViewModel
-3.1 - create repository
+3 - create repository
 	making api without making a network request
-3.2 - create ViewDataMapper from DTO (Model) to ViewData
 
 4 - Create handling cases:
-4.1 - create Viewdata	for error handling 
+4.1 - create Viewdata for error handling 
 4.2 - create error handling and loading in Model
 
-5 - create compose UI
-5.1 - create NavHost/controller in Navigation and call it from the MainActivity.
+5 - create NavHost/controller in Navigation and call it from the MainActivity.
 	- one for Home Screen
 	- one for loaded images screen
+5.1 - Create screens
+ 	- one for Home Screen
+	- one for loaded images screen
 
-6 - connect ViewModel with Compose UI
+6 - create ViewDataMapper from DTO (Model) to ViewData
+6.2 - create compose UIs on Screens
+6.3 - create ViewModel
+6.4 - connect ViewModel with Compose UI
+
+
+------
+## Chanllenges Faced:
+- Dependency injections are not compiling and has taken most of my time debugging. It is still yet to be fixed.
+  `* What went wrong:
+Execution failed for task ':app:kaptDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.gradle.internal.KaptWithoutKotlincTask$KaptExecutionWorkAction
+`
+- Planning the best way to efficiently use the api calls to make the code less complicating.
+	I came up with the solution was to use the main api call to gain breeds of cats, take their id String, use the id String to select the specific cat breed. From the selected cat breed lists api, retreive the image url and display the images given back from the request sent. 
