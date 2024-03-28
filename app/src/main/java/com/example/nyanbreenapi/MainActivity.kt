@@ -11,7 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.nyanbreenapi.ui.theme.NyanBreenApiTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint // Hilt dagger speed runner or it will not compile
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
