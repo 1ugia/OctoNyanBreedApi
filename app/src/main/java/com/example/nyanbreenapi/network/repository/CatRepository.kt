@@ -9,8 +9,7 @@ import javax.inject.Inject
 
 //Injects to view Model
 
-@ActivityScoped
-
+//@ActivityScoped
 // scoping will make this alive as long as the activity does
 
 class CatRepository @Inject constructor(

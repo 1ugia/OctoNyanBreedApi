@@ -42,11 +42,12 @@ Octo Tech: Create an API request call app
 
 
 ------
-## Chanllenges Faced:
-- Dependency injections are not compiling and has taken most of my time debugging. It is still yet to be fixed.
-  `* What went wrong:
-Execution failed for task ':app:kaptDebugKotlin'.
-> A failure occurred while executing org.jetbrains.kotlin.gradle.internal.KaptWithoutKotlincTask$KaptExecutionWorkAction
-`
+## Challenges Faced:
+- Dependency injections were not compiling and has taken most of the time debugging. 
+>`* What went wrong: Execution failed for task ':app:kaptDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.gradle.internal.KaptWithoutKotlincTask$KaptExecutionWorkAction'`
+- Issue fixed with adding into build.gradle file: 
+> `javacOptions { option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true") }`
+- issue was related to support for Kotlin's plugin 1.5.20 and as it explains this is the bug of Kotlin's plugin, not dagger hilt's.
 - Planning the best way to efficiently use the api calls to make the code less complicating.
-	I came up with the solution was to use the main api call to gain breeds of cats, take their id String, use the id String to select the specific cat breed. From the selected cat breed lists api, retreive the image url and display the images given back from the request sent. 
+	I came up with the solution was to use the main api call to gain breeds of cats, take their id String, use the id String to select the specific cat breed. From the selected cat breed lists api, retreive the image url and display the images given back from the request sent.
