@@ -4,6 +4,7 @@ import com.example.nyanbreenapi.network.dto.CatBreedModel
 import com.example.nyanbreenapi.network.dto.CatImageModel
 import com.example.nyanbreenapi.network.dependanceInject.ApiModule.BREED_URL
 import com.example.nyanbreenapi.network.dependanceInject.ApiModule.IMAGE_URL
+import com.example.nyanbreenapi.network.repository.CatRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +23,7 @@ import javax.inject.Singleton
 object ApiModule {
 
     // All requests will append this base url
-    private const val BASE_URL = "https://api.thecatapi.com/v1"
+    const val BASE_URL = "https://api.thecatapi.com/v1"
     const val BREED_URL = "/breeds"
     const val IMAGE_URL = "https://api.thecatapi.com/v1/images/search?limit=20&api_key=live_Q9HYVzt4Cg1SGAdqUvUUA0xwbHaoulPJ0WfKxP8gixkpuTorxXJpn8Qxiy0NZsMW&breed_ids="
 
@@ -35,6 +36,12 @@ object ApiModule {
         logger.setLevel(HttpLoggingInterceptor.Level.HEADERS)
         return OkHttpClient.Builder().addInterceptor(logger).build()
     }
+
+    @Singleton
+    @Provides
+    fun provideCatRepository(
+        api: RetrofitApi
+    ) = CatRepository(api)
 
     // adds the call converter so that the json becomes usable
     // adds the call adapter so the response is wrapped in a Result class

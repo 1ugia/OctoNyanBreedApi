@@ -7,4 +7,6 @@ data class CatBreedModel(
     val id: String? = null,
     @SerializedName("name")
     val name: String? = null,
+    @SerializedName("reference_image_id")
+    val refImageId: String? =null,
 )

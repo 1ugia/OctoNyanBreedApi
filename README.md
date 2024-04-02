@@ -7,7 +7,7 @@ Octo Tech: Create an API request call app
 - Select only the id, name and reference_image_id from the apiModel.
 - Use the id to list all the breeds on the 1st page for the user to show the breeds available as a button.
 - Use the ‘name’ to display each breed names on the button
-- When button is clicked, use the reference_image_id to display all the list of the selected breed type. the url will have to be somewhat hardcoded to gain image - some maybe gifs…
+- When button is clicked, use the reference_image_id to display all the list of the selected breed type. the url will have to be somewhat hardcoded to gain image - some maybe gif images.
 - Allow a floating button to let the user go back to 1st page.
 
 ### Steps to take:
@@ -50,4 +50,10 @@ Octo Tech: Create an API request call app
 > `javacOptions { option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true") }`
 - issue was related to support for Kotlin's plugin 1.5.20 and as it explains this is the bug of Kotlin's plugin, not dagger hilt's.
 - Planning the best way to efficiently use the api calls to make the code less complicating.
-	I came up with the solution was to use the main api call to gain breeds of cats, take their id String, use the id String to select the specific cat breed. From the selected cat breed lists api, retreive the image url and display the images given back from the request sent.
+	I came up with the solution was to use the main api call to gain breeds of cats, take their id String, use the id String to select the specific cat breed. From the selected cat breed lists api, retrieve the image url and display the images given back from the request sent.
+- Creating a new project from scratch is harder than following the process of a created project.
+- Implement error handles.
+- Creating an onClick and make it link via filtering only the image.
+- Faced a lot of walls creating the app. Have definitely learned to plan more simply for next time: to let the api calls happen first then build on the rest of the app like cashing, error handling, thinking about the next page already. 
+- Making apps in between shifts allowed me to be more organised during the week to accommodate time for project making more intensely.
+- 
